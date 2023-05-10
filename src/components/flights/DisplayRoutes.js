@@ -6,8 +6,8 @@ const DisplayRoutes = (props) => {
         return (
             <div className='air-card'>
                 <h3>Airline: {route.Airline}</h3>
-                <h4>{`Source Airport: ${route["Source airport"]}`}</h4>
-                <h4>{`Destination Airport: ${route["Destination airport"]}`}</h4>
+                <h4>{`Source Airport: ${props.airData.source}`}</h4>
+                <h4>{`Destination Airport: ${props.airData.destination}`}</h4>
             </div>
         )
     }) : 'No Routes available'

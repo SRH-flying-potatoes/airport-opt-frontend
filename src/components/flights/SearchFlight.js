@@ -26,7 +26,11 @@ const SearchFlight = (props) => {
                 to: toLocation
             }
         }).then((res) => {
-            props.sendRoutes(res.data.routesData)
+            props.sendRoutes({
+                routes: res.data.routesData,
+                source: airportData.find((item => item.IATA === fromLocation)).Name,
+                destination: airportData.find((item => item.IATA === toLocation)).Name
+            })
         }).catch((err) => {
             console.log(err)
         })
